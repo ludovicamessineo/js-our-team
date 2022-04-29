@@ -34,16 +34,17 @@ const team = [
 // MILESTONE 2:
 // stampare le stesse informazioni su DOM sottoforma di stringhe
 
-// Con ciclo for prelevo tutti gli oggetti della stringa
+const teamContainer = document.getElementById("person");
+console.log(teamContainer);
+
 for (let i = 0; i < team.length; i++) {
-  const person = team[i];
-
-  // Con ciclo for in scorro tutte le chiavi e i valori
-  for (let key in person) {
-      console.log(person[key]);
-
-    }
-  document.getElementById("person").innerHTML = 
-  `${person.name}, ${person.role}, ${person.image}`
-
+  const oneMember = team[i];
+  console.log(oneMember);
+  const newMember = document.createElement("div");
+  newMember.innerHTML = `
+    <h2>${oneMember.name}</h2>
+    <p>${oneMember.role}</p>
+    <p>${oneMember.image}</p>
+  `
+  teamContainer.append(newMember)
 }
